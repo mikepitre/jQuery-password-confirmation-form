@@ -2,7 +2,7 @@
 //Solution: hide and show them at appropriate times
 
 var $password = $('#password');
-var $confirm_password = $('#confirm_password')
+var $confirmPassword = $('#confirm_password');
 
 //hide hints
 $('form span').hide();
@@ -19,21 +19,21 @@ function passwordEvent() {
 }
 
 function confirmPasswordEvent() {
-    if ($confirm_password.val() === $password.val()) {
+    if ($confirmPassword.val() === $password.val()) {
         //hide hint if valid
-        $confirm_password.next().hide();
+        $confirmPassword.next().hide();
     } else {
-        $confirm_password.next().show();
+        $confirmPassword.next().show();
         //else show hint
     }
 }
 
 //when event happens on password input
-$('#password').focus(passwordEvent).keyup(passwordEvent);
+$password.focus(passwordEvent).keyup(passwordEvent).focus(confirmPasswordEvent).keyup(confirmPasswordEvent);
 
 
 //when event happens on confirmation
-$('#confirm_password').focus(confirmPasswordEvent).keyup(confirmPasswordEvent);
+$confirmPassword.focus(confirmPasswordEvent).keyup(confirmPasswordEvent);
     //find out if password and confirmation match
         //hide hint if matched
         //else show hint
