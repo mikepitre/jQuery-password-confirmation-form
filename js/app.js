@@ -16,7 +16,7 @@ function passwordEvent() {
 }
 
 function confirmPasswordEvent() {
-    if ($(this).val() === $('#password').val()) {
+    if ($('#confirm_password').val() === $('#password').val()) {
         //hide hint if valid
         $(this).next().hide();
     } else {
