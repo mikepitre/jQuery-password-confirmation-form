@@ -2,6 +2,7 @@
 //Solution: hide and show them at appropriate times
 
 //hide hints
+$('form span').hide();
 
 //when event happens on password input
 //find out if password is valid
