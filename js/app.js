@@ -4,10 +4,20 @@
 //hide hints
 $('form span').hide();
 
+function passwordEvent () {
+    //find out if password is valid
+    if ($(this).val().length > 8) {
+        //hide hint if valid
+        $(this).next().hide();
+    } else {
+        $(this).next().show();
+        //else show hint
+    }
+}
+
 //when event happens on password input
-//find out if password is valid
-    //hide hint if valid
-    //else show hint
+$('#password').focus(passwordEvent).keyup(passwordEvent);
+
 
 //when event happens on confirmation
     //find out if password and confirmation match
