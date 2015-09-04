@@ -7,9 +7,17 @@ var $confirmPassword = $('#confirm_password');
 //hide hints
 $('form span').hide();
 
+function isPasswordValid() {
+    return $password.val().length > 8;
+}
+
+function arePasswordsMatching() {
+    return $confirmPassword.val() === $password.val()
+}
+
 function passwordEvent() {
     //find out if password is valid
-    if ($password.val().length > 8) {
+    if (isPasswordValid) {
         //hide hint if valid
         $password.next().hide();
     } else {
@@ -19,7 +27,7 @@ function passwordEvent() {
 }
 
 function confirmPasswordEvent() {
-    if ($confirmPassword.val() === $password.val()) {
+    if (arePasswordsMatching) {
         //hide hint if valid
         $confirmPassword.next().hide();
     } else {
